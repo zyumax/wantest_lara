@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->comment('製品名');
+            $table->integer('price')->comment('製品の値段');
+            $table->string('remark')->comment('備考欄');
+            $table->tinyInteger('evaluation')->comment('商品の評価');
             $table->timestamps();
         });
     }
