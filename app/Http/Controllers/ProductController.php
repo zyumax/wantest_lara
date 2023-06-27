@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index() {
         $products = Product::all();
-        return view('index', compact('products'));
+        return view('products.index', compact('products'));
     }
 
     public function store(Request $request) {
