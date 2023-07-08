@@ -29,4 +29,8 @@ class ProductController extends Controller
         return back();
     }
 
+    public function destroy(Product $product) {
+        $product->delete();
+        return redirect()->route('product.create');
+    }
 }
