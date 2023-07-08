@@ -6,4 +6,4 @@
     <p>{{ $product->remark }}</p>
     <p>{{ $product->evaluation }}</p>
   @endforeach
-</div>
+</div> 

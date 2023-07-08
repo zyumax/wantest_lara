@@ -14,8 +14,10 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('index', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'index']);
+Route::get('create', [ProductController::class, 'create']);
+Route::post('post', [ProductController::class, 'store'])->name('product.store');
