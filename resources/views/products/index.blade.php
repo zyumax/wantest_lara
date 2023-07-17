@@ -11,24 +11,27 @@
   </head>
   <body>
     <h1>商品一覧画面</h1>
-    <div>
-      @foreach($products as $product)
-        <p>{{ $product->name }}</p>
-        <p>{{ $product->price }}</p>
-        <p>{{ $product->remark }}</p>
-        <p>{{ $product->evaluation }}</p>
-        <form method="post" action="{{route('product.destroy', $product)}}">
-          @csrf
-          {{-- @method('delete') --}}
-          <button type="button" class="btn btn-danger">削除</button>
-        </form>
-        {{-- <a href="{{route('product.show')}}">
-          編集
-        </a> --}}
-        <a href="{{route('product.edit', $product)}}">
-          編集
-        </a>
-      @endforeach
+    <div class="card" style="width: 18rem;">
+      {{-- <div class="card-body"> --}}
+        @foreach($products as $product)
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title">{{ $product->name }}</p>
+            <p class="card-title">{{ $product->price }}</p>
+            <p class="card-title">{{ $product->remark }}</p>
+            <p class="card-title">{{ $product->evaluation }}</p>
+          </div>
+          <form method="post" action="{{route('product.destroy', $product)}}">
+            @csrf
+            {{-- @method('delete') --}}
+            <button class="btn btn-danger">削除</button>
+          </form>
+          <a href="{{route('product.edit', $product)}}">
+            編集
+          </a>
+        </div>
+        @endforeach
+    {{-- </div> --}}
       {{-- <form method="post" action="{{route('product.destroy', $product)}}">
         @csrf
         <button>削除</button>
